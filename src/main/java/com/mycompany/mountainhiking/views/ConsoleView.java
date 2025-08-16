@@ -32,9 +32,9 @@ public class ConsoleView {
 
     public void printAll(Collection<Registration> regs, Map<String, Mountain> mountains) {
         if (regs == null || regs.isEmpty()) { msg("No data."); return; }
-        System.out.println("---------------------------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------------------------");
         System.out.printf("%-10s | %-20s | %-11s | %-8s | %-22s | %10s%n", "StudentID","Name","Phone","Campus","Mountain","Fee");
-        System.out.println("---------------------------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------------------------");
         regs.stream().sorted(Comparator.comparing(r -> r.student.getId())).forEach(r -> {
             Mountain m = mountains.get(r.mountainCode);
             String mName = m != null ? m.name : "?";
